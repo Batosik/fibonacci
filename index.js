@@ -5,11 +5,11 @@ const sumFibonacci = (n) => {
   if (isNaN(n) || n <= 1) {
     return 0
   }
-  const iter = (previous, currant, index, acc) => {
+  const iter = (previous, current, index, acc) => {
     if (index === n) {
-      return acc + currant
+      return acc + current
     }
-    return iter(currant, previous + currant, index + 1, acc + currant)
+    return iter(current, previous + current, index + 1, acc + current)
   }
   return iter(1, 1, 3, 1)
 }
@@ -18,6 +18,6 @@ console.log(sumFibonacci(1)); // 0 (только первое число Фиб�
 console.log(sumFibonacci(2)); // 1 (0 + 1)
 console.log(sumFibonacci(3)); // 2 (0 + 1 + 1)
 console.log(sumFibonacci(4)); // 4 (0 + 1 + 1 + 2)
-console.log(sumFibonacci(5)); // 7 (0 + 1 + 1 + 2 + 3)
+console.log(sumFibonacci(10)); // 7 (0 + 1 + 1 + 2 + 3)
 console.log(sumFibonacci(-1)); // 0
 console.log(sumFibonacci('abc')); // 0
